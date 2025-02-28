@@ -1,0 +1,3 @@
+db.system.find().pretty()
+use admin
+db.runCommand({ connectionStatus: 1 })

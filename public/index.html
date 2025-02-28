@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Documentation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>API REST para gestión de productos, categorías y valoraciones</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>Descripción</th>
+            <th>Método</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Endpoints de productos -->
+          <tr>
+            <th colspan="3">Productos</th>
+          </tr>
+          <tr>
+            <td><code>/api/products</code></td>
+            <td>Crear un nuevo producto</td>
+            <td>POST</td>
+          </tr>
+          <tr>
+            <td><code>/api/products</code></td>
+            <td>
+              Obtener todos los productos. Parámetros opcionales de filtrado:
+              <code>categoryId</code> y <code>name</code>
+            </td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/products/{id}</code></td>
+            <td>Obtener un producto por ID</td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/products/{id}</code></td>
+            <td>Actualizar un producto por ID</td>
+            <td>PUT</td>
+          </tr>
+          <tr>
+            <td><code>/api/products/{id}</code></td>
+            <td>Eliminar un producto por ID</td>
+            <td>DELETE</td>
+          </tr>
+
+          <!-- Endpoints de categorías -->
+          <tr>
+            <th colspan="3">Categorías</th>
+          </tr>
+          <tr>
+            <td><code>/api/categories</code></td>
+            <td>Crear una nueva categoría</td>
+            <td>POST</td>
+          </tr>
+          <tr>
+            <td><code>/api/categories</code></td>
+            <td>Obtener todas las categorías</td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/categories/tree</code></td>
+            <td>Obtener la jerarquía completa de categorías</td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/categories/{id}</code></td>
+            <td>Obtener una categoría por ID</td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/categories/{id}</code></td>
+            <td>Actualizar una categoría por ID</td>
+            <td>PUT</td>
+          </tr>
+          <tr>
+            <td><code>/api/categories/{id}</code></td>
+            <td>Eliminar una categoría por ID</td>
+            <td>DELETE</td>
+          </tr>
+
+          <!-- Endpoints de comentarios -->
+          <tr>
+            <th colspan="3">Comentarios</th>
+          </tr>
+          <tr>
+            <td><code>/api/reviews</code></td>
+            <td>Añadir un comentario a un producto</td>
+            <td>POST</td>
+          </tr>
+          <tr>
+            <td><code>/api/reviews</code></td>
+            <td>
+              Obtener todos los comentarios. Parámetros opcionales de filtrado:
+              <code>productId</code> y <code>userId</code>
+            </td>
+            <td>GET</td>
+          </tr>
+          <tr>
+            <td><code>/api/reviews/{id}</code></td>
+            <td>Actualizar un comentario (solo por el usuario que lo creó)</td>
+            <td>PUT</td>
+          </tr>
+          <tr>
+            <td><code>/api/reviews/{id}</code></td>
+            <td>Eliminar un comentario (solo por el usuario que lo creó)</td>
+            <td>DELETE</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <h2>Ejemplo de JSON de un producto</h2>
+      <pre>
+        <code> 
+        {
+            "name": "Producto 1",
+            "description": "Descripción del producto 1",
+            "price": 100,
+            "categoryId": "60c72b2f9b1d8b3a4c8b4567"
+        } 
+        </code>
+      </pre>
+    </div>
+
+    <div class="container">
+      <h2>Ejemplo de JSON de una categoría</h2>
+      <pre>
+        <code> 
+        {
+            "name": "Categoría 1",
+            "description": "Descripción de la categoría 1",
+            "parentId": "60c72b2f9b1d8b3a4c8b4567"
+        } 
+        </code>
+      </pre>
+    </div>
+
+    <div class="container">
+      <h2>Ejemplo de JSON de un comentario</h2>
+      <pre>
+        <code> 
+        {
+            "productId": "60c72b2f9b1d8b3a4c8b4567",
+            "userId": "60c72b2f9b1d8b3a4c8b4567",
+            "username": "usuario123",
+            "rating": 4.5,
+            "comment": "Muy buen producto, la batería dura bastante."
+        } 
+        </code>
+      </pre>
+    </div>
+
+    <!-- Scripts necesarios para Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
