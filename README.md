@@ -74,3 +74,37 @@ La API REST se despliega en `http://localhost:8080`. A continuación se describe
 }
 ```
 
+## Indices para rendimiento
+
+Para mejorar el rendimiento de los endpoints, es recomendable definir los siguientes índices en MongoDB:
+
+### Indices para la colección de productos
+
+1. Indice en el campo `categoryId` para filtrar productos por categoría:
+   ```bash
+   db.products.createIndex({ categoryId: 1 })
+   ```
+
+2. Indice en el campo `name` para buscar productos por nombre:
+   ```bash
+   db.products.createIndex({ name: "text" })
+   ```
+
+### Indices para la colección de categorías
+
+1. Indice en el campo `parentId` para construir la jerarquía de categorías:
+   ```bash
+   db.categories.createIndex({ parentId: 1 })
+   ```
+
+### Indices para la colección de comentarios
+
+1. Indice en el campo `productId` para filtrar comentarios por producto:
+   ```bash
+   db.reviews.createIndex({ productId: 1 })
+   ```
+
+2. Indice en el campo `userId` para filtrar comentarios por usuario:
+   ```bash
+   db.reviews.createIndex({ userId: 1 })
+   ```

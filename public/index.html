@@ -16,9 +16,9 @@
       <table class="table">
         <thead>
           <tr>
+            <th>Método</th>
             <th>Endpoint</th>
             <th>Descripción</th>
-            <th>Método</th>
           </tr>
         </thead>
         <tbody>
@@ -27,32 +27,32 @@
             <th colspan="3">Productos</th>
           </tr>
           <tr>
+            <td>POST</td>
             <td><code>/api/products</code></td>
             <td>Crear un nuevo producto</td>
-            <td>POST</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/products</code></td>
             <td>
               Obtener todos los productos. Parámetros opcionales de filtrado:
               <code>categoryId</code> y <code>name</code>
             </td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/products/{id}</code></td>
             <td>Obtener un producto por ID</td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>PUT</td>
             <td><code>/api/products/{id}</code></td>
             <td>Actualizar un producto por ID</td>
-            <td>PUT</td>
           </tr>
           <tr>
+            <td>DELETE</td>
             <td><code>/api/products/{id}</code></td>
             <td>Eliminar un producto por ID</td>
-            <td>DELETE</td>
           </tr>
 
           <!-- Endpoints de categorías -->
@@ -60,34 +60,34 @@
             <th colspan="3">Categorías</th>
           </tr>
           <tr>
+            <td>POST</td>
             <td><code>/api/categories</code></td>
             <td>Crear una nueva categoría</td>
-            <td>POST</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/categories</code></td>
             <td>Obtener todas las categorías</td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/categories/tree</code></td>
             <td>Obtener la jerarquía completa de categorías</td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/categories/{id}</code></td>
             <td>Obtener una categoría por ID</td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>PUT</td>
             <td><code>/api/categories/{id}</code></td>
             <td>Actualizar una categoría por ID</td>
-            <td>PUT</td>
           </tr>
           <tr>
+            <td>DELETE</td>
             <td><code>/api/categories/{id}</code></td>
             <td>Eliminar una categoría por ID</td>
-            <td>DELETE</td>
           </tr>
 
           <!-- Endpoints de comentarios -->
@@ -95,27 +95,27 @@
             <th colspan="3">Comentarios</th>
           </tr>
           <tr>
+            <td>POST</td>
             <td><code>/api/reviews</code></td>
             <td>Añadir un comentario a un producto</td>
-            <td>POST</td>
           </tr>
           <tr>
+            <td>GET</td>
             <td><code>/api/reviews</code></td>
             <td>
               Obtener todos los comentarios. Parámetros opcionales de filtrado:
               <code>productId</code> y <code>userId</code>
             </td>
-            <td>GET</td>
           </tr>
           <tr>
+            <td>PUT</td>
             <td><code>/api/reviews/{id}</code></td>
             <td>Actualizar un comentario (solo por el usuario que lo creó)</td>
-            <td>PUT</td>
           </tr>
           <tr>
+            <td>DELETE</td>
             <td><code>/api/reviews/{id}</code></td>
             <td>Eliminar un comentario (solo por el usuario que lo creó)</td>
-            <td>DELETE</td>
           </tr>
         </tbody>
       </table>

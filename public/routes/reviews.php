@@ -110,6 +110,16 @@ $app->put($prefix . '/reviews/{id}', function (RequestInterface $request, Respon
         ]);
     }
 
+    // Validar que el ID del usuario sea un ObjectId
+    try {
+        new ObjectId($data['userId']);
+    } catch (Exception $e) {
+        return createJsonResponse($response->withStatus(400), [
+            'status' => 400,
+            'message' => 'Invalid user ID'
+        ]);
+    }
+
     // Validar los datos de entrada
     if (!isset($data['userId'], $data['rating'], $data['comment'])) {
         return createJsonResponse($response->withStatus(400), [
@@ -119,7 +129,7 @@ $app->put($prefix . '/reviews/{id}', function (RequestInterface $request, Respon
     }
 
     // Verificar que el comentario pertenece al usuario
-    $comment = $reviews->findOne(['_id' => new ObjectId($id), 'userId' => $data['userId']]);
+    $comment = $reviews->findOne(['_id' => new ObjectId($id), 'userId' => new ObjectId($data['userId'])]);
     if (!$comment) {
         return createJsonResponse($response->withStatus(403), [
             'status' => 403,
