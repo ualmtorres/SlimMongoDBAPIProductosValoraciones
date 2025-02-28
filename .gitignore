@@ -237,8 +237,7 @@ modules.xml
 # Build data
 /build/
 
-# Redis data
-/redis-data/
-/redis-stack.conf/
+# Mongo data
+/mongo-data/
 
 # End of https://www.toptal.com/developers/gitignore/api/composer,node,phpunit,phpstorm+all
